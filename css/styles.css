@@ -10,6 +10,7 @@
     --examples-border: #eeeeee;
     --header-border-color: #ececec;
     --socials-bg: #AFB1B8;
+    --footer-communication-color: rgba(255, 255, 255, .6);
 }
 
 body {
@@ -143,6 +144,7 @@ button {
 .contact.list {
     display: flex;
     margin-left: auto;
+    align-items: center;
 
 }
 
@@ -150,8 +152,13 @@ button {
     margin-right: 50px;
 }
 
+.mail>.icon,
+.phone>.icon {
+    margin-right: 10px;
+}
+
 .contact .link {
-    display: block;
+    display: flex;
     align-items: center;
     padding: 32px 0;
 
@@ -169,6 +176,8 @@ button {
 /* -----------HERO----------- */
 .hero {
     text-align: center;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .background {
@@ -351,8 +360,13 @@ button {
 
 .socials-bg:hover,
 .socials-bg:focus {
-    fill: var(--primary-color);
+
     background-color: var(--accent-color)
+}
+
+.socials-bg:hover svg,
+.socials-bg:focus svg {
+    fill: var(--primary-color);
 }
 
 /* --------------CLIENTS------------------ */
@@ -383,6 +397,7 @@ button {
 
 .client .link {
     display: block;
+    width: 100%;
     padding: 16px 32px;
     fill: var(--socials-bg);
     border-color: transparent;
@@ -400,7 +415,6 @@ button {
     border: 1px solid var(--accent-color);
 }
 
-.client .icon {}
 
 /* -----------FOOTER-------------- */
 .footer {
@@ -410,8 +424,9 @@ button {
     background-color: var(--secondary-bg-color);
 }
 
-.footer .container {
+.footer-inner {
     display: flex;
+    align-items: baseline;
 }
 
 .footer .footer-left {
@@ -442,7 +457,7 @@ button {
 
 .communication {
     line-height: 1.71;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-communication-color);
 }
 
 .appeal {
@@ -503,20 +518,13 @@ button {
 .project .examples {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .project .item-card {
-    margin-right: 30px;
-    margin-bottom: 30px;
+    flex-basis: calc((100% - 60px) / 3)
 }
 
-.project .item-card:nth-child(3n) {
-    margin-right: 0;
-}
-
-.project .item-card:nth-last-child(-n+3) {
-    margin-bottom: 0;
-}
 
 .examples .link:hover,
 .examples .link:focus {
